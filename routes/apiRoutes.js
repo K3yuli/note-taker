@@ -30,4 +30,4 @@ router.delete((re, res) => {
 })
 
 
-module.exports = app;
+module.exports = router;
