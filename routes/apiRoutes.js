@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 // GET /api/notes should read the db.json file and return all saved notes as JSON.
-router.get('/api/notes', (req, res) => {
+router.get('/notes', (req, res) => {
     res.json(notesData)
 });
 
@@ -9,7 +9,7 @@ router.get('/api/notes', (req, res) => {
 // add it to the db.json file, and then return the new note to the client.
 // You'll need to find a way to give each note a unique id when it's saved
 // (look into npm packages that could do this for you).
-router.post('/api/notes', (req, res) => {
+router.post('/notes', (req, res) => {
     if(notesData.length == 0) {
         req.body.id = '0';
     } else {
@@ -39,7 +39,7 @@ function deleteNote(id, notesArray) {
     }
 }
 
-router.delete('api/notes/:id', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
     deleteNote(req.params.id, allNotes);
     res.json(true);
 })
