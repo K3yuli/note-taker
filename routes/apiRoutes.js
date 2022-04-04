@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const allNotes = require('../db/db.json');
+const path = require('path');
 
 // GET /api/notes should read the db.json file and return all saved notes as JSON.
 router.get('/api/notes', (req, res) => {
@@ -22,7 +24,7 @@ function createNewNote(body, notesArray) {
 
     notesArray.push(newNote);
     fs.writeFileSync(
-        path.join(_dirname, './db/db.json'),
+        path.join(_dirname, '../db/db.json'),
         JSON.stringify(notesArray, null, 2)
     );
     return newNote;
@@ -43,7 +45,7 @@ function deleteNote(id, notesArray) {
         if(note.id == id) {
             notesArray.splice(i, 1);
             fs.writeFileSync(
-                path.join(_dirname, '.db/db.json'),
+                path.join(_dirname, '../db/db.json'),
                 JSON.stringify(notesArray, null, 2)
             );
             break;
