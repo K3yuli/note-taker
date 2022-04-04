@@ -4,6 +4,7 @@
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Demo](#demo)
+- [Technologies](#tech)
 
 <a name="user-story">User Story</a>
 ```md
@@ -30,3 +31,8 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 ```
 
 <a name="demo">Demo</a>
+![Screenshot](./public/assets/images/note-taker.png)
+
+<a name="tech">Technologies</a>
+- [Express.js](https://expressjs.com/)
+- [Heroku](heroku.com)
